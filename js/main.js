@@ -64,7 +64,6 @@ $(function() {
     $('.js-card-description').each(function(){
       var _self = $(this);
       if (_self.outerHeight() > (19*5)){
-        console.log(19*5);
         _self.addClass('text-shrink');
       }
     });

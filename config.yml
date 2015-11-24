@@ -1,7 +1,6 @@
 # Site settings
-baseurl: "" # the subpath of your site, e.g. /blog/
-url: "smartergiving.org/dispatch" # the base hostname & protocol for your site
-
+baseurl: "/dispatch"
+url: "https://smartergiving.org"
 exclude:
 - README.md
 - CNAME

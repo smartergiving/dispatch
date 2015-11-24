@@ -1,3 +1,5 @@
+---
+---
 <!DOCTYPE HTML>
 <!--
   Photon by HTML5 UP
@@ -9,10 +11,10 @@
     <title>Dispatch :: By SmarterGiving</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!--[if lte IE 8]><script src="js/ie/html5shiv.js"></script><![endif]-->
-    <link rel="stylesheet" href="css/main.css" />
-    <!--[if lte IE 8]><link rel="stylesheet" href="css/ie8.css" /><![endif]-->
-    <!--[if lte IE 9]><link rel="stylesheet" href="css/ie9.css" /><![endif]-->
+    <!--[if lte IE 8]><script src="{{ site.baseurl }}/js/ie/html5shiv.js"></script><![endif]-->
+    <link rel="stylesheet" href="{{ site.baseurl }}/css/main.css" />
+    <!--[if lte IE 8]><link rel="stylesheet" href="{{ site.baseurl }}/css/ie8.css" /><![endif]-->
+    <!--[if lte IE 9]><link rel="stylesheet" href="{{ site.baseurl }}/css/ie9.css" /><![endif]-->
   </head>
   <body>
 
@@ -40,38 +42,38 @@
           <div class="row 150%">
             <div class="4u 12u$(medium)">
               <div class="card-wrapper-landing">
-                <span class="image fit"><img src="images/gender.jpg" alt="" /></span>
+                <span class="image fit"><img src="{{ site.baseurl }}/images/gender.jpg" alt="" /></span>
                 <h3>Gender Equality</h3>
                 <p>Find out where gender-intelligent donors are placing their charitable dollars</p>
                 <ul class="actions">
-                  <li><a href="/lists/gender-equality/" class="button">View</a></li>
+                  <li><a href="{{ site.baseurl }}/lists/gender-equality/" class="button">View</a></li>
                 </ul>
               </div>
             </div>
             <div class="4u 12u$(medium)">
               <div class="card-wrapper-landing">
-                <span class="image fit"><img src="images/tech-for-good.jpg" alt="" /></span>
+                <span class="image fit"><img src="{{ site.baseurl }}/images/tech-for-good.jpg" alt="" /></span>
                 <h3>Tech For Good</h3>
                 <p>Nonprofits using technology to deliver programs to beneficiaries.</p>
                 <ul class="actions">
-                  <li><a href="/lists/tech-for-good/" class="button">View</a></li>
+                  <li><a href="{{ site.baseurl }}/lists/tech-for-good/" class="button">View</a></li>
                 </ul>
               </div>
             </div>
             <div class="4u$ 12u$(medium)">
               <div class="card-wrapper-landing">
-                <span class="image fit"><img src="images/yc.jpg" alt="" /></span>
+                <span class="image fit"><img src="{{ site.baseurl }}/images/yc.jpg" alt="" /></span>
                 <h3>Y-Combinator Nonprofits</h3>
                 <p>The world's most respected startup accerator invests in nonprofits too</p>
                 <ul class="actions">
                   <li><a class="button disabled">Coming Soon</a></li>
-                  <!--li><a href="/lists/y-combinator-nonprofits/" class="button">View</a></li-->
+                  <!--li><a href="{{ site.baseurl }}/lists/y-combinator-nonprofits/" class="button">View</a></li-->
                 </ul>
               </div>
             </div>
             <div class="4u 12u$(medium)">
               <div class="card-wrapper-landing">
-                <span class="image fit"><img src="images/intl.jpg" alt="" /></span>
+                <span class="image fit"><img src="{{ site.baseurl }}/images/intl.jpg" alt="" /></span>
                 <h3>#IntlGrassroots</h3>
                 <p>Small organizations using localized models with global potential.</p>
                 <ul class="actions">
@@ -81,7 +83,7 @@
             </div>
             <div class="4u 12u$(medium)">
               <div class="card-wrapper-landing">
-                <span class="image fit"><img src="images/allies.jpg" alt="" /></span>
+                <span class="image fit"><img src="{{ site.baseurl }}/images/allies.jpg" alt="" /></span>
                 <h3>Gender Equality: #MaleAllies</h3>
                 <p>We'll highlight the work of male allies and the organizations who help create them</p>
                 <ul class="actions">
@@ -184,16 +186,18 @@
           <li>&copy; SmarterGiving</li><br>
           <li>We ♥ open source. HTML5 template graciously provided by <a href="https://twitter.com/n33co">@n33co</a>. Find it at <a href="http://html5up.net">HTML5 UP.</a></li>
         </ul>
+        <span style="visibility:hidden">Baseurl: {{ site.baseurl }}</span>
+        <span style="visibility:hidden">Url: {{ site.url }}</span>
       </section>
 
     <!-- Scripts -->
-      <script src="/js/jquery.min.js"></script>
-      <script src="/js/jquery.scrolly.min.js"></script>
-      <script src="/js/skel.min.js"></script>
-      <script src="/js/util.js"></script>
-      <script src="/js/sweetalert.min.js"></script>
-      <!--[if lte IE 8]><script src="/js/ie/respond.min.js"></script><![endif]-->
-      <script src="/js/main.js"></script>
+      <script src="{{ site.baseurl }}/js/jquery.min.js"></script>
+      <script src="{{ site.baseurl }}/js/jquery.scrolly.min.js"></script>
+      <script src="{{ site.baseurl }}/js/skel.min.js"></script>
+      <script src="{{ site.baseurl }}/js/util.js"></script>
+      <script src="{{ site.baseurl }}/js/sweetalert.min.js"></script>
+      <!--[if lte IE 8]><script src="{{ site.baseurl }}/js/ie/respond.min.js"></script><![endif]-->
+      <script src="{{ site.baseurl }}/js/main.js"></script>
 
   </body>
 </html>
