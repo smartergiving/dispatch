@@ -1,0 +1,16 @@
+# Site settings
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "smartergiving.org/dispatch" # the base hostname & protocol for your site
+
+exclude:
+- README.md
+- CNAME
+
+sass:
+  sass_dir: _sass
+
+# Build settings
+markdown: kramdown
+
+kramdown:
+  input: GFM

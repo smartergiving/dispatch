@@ -1,0 +1,67 @@
+<div id="{{ org.key }}" class="6u 12u$(medium)">
+<!--div class="col-md-4"-->
+  <div class="card-wrapper-lists">
+    <div class="flip-container">
+      <div class="flipper">
+        <div class="front">
+          <!--span class="image fit"><img src="//d2zrr75qo845hh.cloudfront.net/images/db/{{ org.key }}/bg.jpg" alt="" /></span-->
+          <div class="image fit img-card-lists" style="background:url('https://s3.amazonaws.com/kyn-production/images/db/{{ org.key }}/bg.jpg'), url('//d2zrr75qo845hh.cloudfront.net/images/db/default/bg.jpg') center no-repeat; background-size:cover;"></div>
+          <div class="card-body">
+            <h3>{{ org.name }}</h3>
+                  <div class="card-body-text">
+                    {% if org.insights %}
+                      {% for each in org.insights %}
+                        <p class="align-left">"{{ each.text }}"</p>
+                        <header>
+                          <!--img class="img-circle img-cards-avatar" src="https://s3.amazonaws.com/kyn-production/images/db/{{ each.key }}/avatar.jpg" alt="{{ each.name }}"-->
+                          <!--h6 class="align-center">&mdash; {{ each.name }} &mdash;</h6-->
+                          <h6 class="align-right text-light">&mdash; {{ each.name }}</h6>
+                        </header>
+                      {% endfor %}
+                    {% else %}
+                      <p class="align-left">{{ org.description }}</p>
+                    {% endif %}
+                  </div>
+            <ul class="actions card-actions">
+              <li><a class="js-donate button special">Donate</a></li>
+              <li><div class="js-flip button">More</li>
+              <!--li><div class="js-flip button">More <img class="icon-flip icon-flip-transform" src="/images/icon-flip-small.png" alt=""></li-->
+            </ul>
+          </div>
+        </div>
+        <div class="back">
+          <div class="card-body">
+            <img src="//d2zrr75qo845hh.cloudfront.net/images/db/{{ org.key }}/avatar.jpg" data-img-type="avatar" class="img-circle img-cards-avatar-cardback">
+            <header class="">
+              <h3>{{ org.name }}</h3>
+            </header>
+            {% if org.target_outcome %}
+              <!--h6 class="text-light">GOAL</h6-->
+              <p class="">{{ org.target_outcome }}</p>
+            {% endif %}
+            <!--h6 class="text-light">DESCRIPTION</h6-->
+            <p class="align-left js-card-description">{{ org.description }}</p>
+            <!--h6 class="text-light">LEARN MORE</h6-->
+            <ul class="actions">
+              {% assign hash = org.links | where:"name","Website" %}
+              {% for each in hash %}
+                <li><a href="{{ each.link }}" class="button small" target="_blank">{{ each.name }}</a></li>
+              {% endfor %}
+            </ul>
+            <!--div class="align-right">
+              <div class="js-flip">Back&nbsp;
+                <a class="icon-outline">
+                  <img class="icon-flip" src="/images/icon-flip-small.png" alt="">
+                </a>
+              </div>
+            </div-->
+            <ul class="actions card-actions-back">
+              <!--li><div class="js-flip button special">Back <img class="icon-flip icon-flip-white" src="/images/icon-flip-small-white.png" alt=""></li-->
+              <li><div class="js-flip button special">Back</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

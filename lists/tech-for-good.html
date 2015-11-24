@@ -1,0 +1,21 @@
+---
+layout: lists
+permalink: /lists/tech-for-good/
+list_name: Tech For Good
+tagline: Learn where tech-savvy donors are making charitable investments
+data_source: tech_for_good
+---
+<!-- One -->
+<section id="one" class="main style1 special bg-lists">
+  <div class="container">
+    <header class="major">
+      <h2>{{ page.list_name }}</h2>
+    </header>
+    <p>{{ page.tagline }}</p>
+    <div class="row 150%">
+      {% for org in site.data.[page.data_source].sgvg %}
+        {% include card-template.html %}
+      {% endfor %}
+    </div>
+  </div>
+</section>

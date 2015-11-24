@@ -1,0 +1,21 @@
+---
+layout: lists
+permalink: /lists/gender-equality/
+list_name: Gender Equality
+tagline: Learn where gender-intelligent donors are making investments
+data_source: gender_equality
+---
+<!-- One -->
+<section id="one" class="main style1 special bg-lists">
+  <div class="container">
+    <header class="major">
+      <h2>{{ page.list_name }}</h2>
+    </header>
+    <p>{{ page.tagline }}</p>
+    <div class="row 150%">
+      {% for org in site.data.[page.data_source].sgvg %}
+        {% include card-template.html %}
+      {% endfor %}
+    </div>
+  </div>
+</section>

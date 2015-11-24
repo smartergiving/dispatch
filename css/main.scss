@@ -1,0 +1,271 @@
+---
+# Do not remove
+---
+@import "theme";
+@import "sweetalert";
+
+/*********************************************************************************/
+/* Custom Mixins and Functions                                                   */
+/*********************************************************************************/
+/// Gives a card depth effect.
+/// @param {Number} $depth - depth level (between 1 and 5)
+/// @link http://www.google.com/design/spec/layout/layout-principles.html#layout-principles-dimensionality Google Design
+/// @requires {function} top-shadow
+/// @requires {function} bottom-shadow
+@mixin card($depth) {
+  @if $depth < 1 {
+    box-shadow: none;
+  } @else if $depth > 5 {
+    @warn "Invalid $depth `#{$depth}` for mixin `card`.";
+  } @else {
+    box-shadow: bottom-shadow($depth), top-shadow($depth);
+  }
+}
+
+/// Computes a top-shadow for a card effect.
+/// @param {Number} $depth - depth level
+/// @return {List}
+@function top-shadow($depth) {
+  $primary-offset: nth(1.5 3 10 14 19, $depth) * 1px;
+  $blur: nth(1.5 3 10 14 19, $depth) * 4px;
+  $color: rgba(black, nth(.12 .16 .19 .25 .30, $depth));
+
+  @return 0 $primary-offset $blur $color;
+}
+
+/// Computes a bottom-shadow for a card effect.
+/// @param {Number} $depth - depth level
+/// @return {List}
+@function bottom-shadow($depth) {
+  $primary-offset: nth(1.5 3 6 10 15, $depth) * 1px;
+  $blur: nth(1 3 3 5 6, $depth) * 4px;
+  $color: rgba(black, nth(.24 .23 .23 .22 .22, $depth));
+
+  @return 0 $primary-offset $blur $color;
+}
+
+/*********************************************************************************/
+/* Global Styles                                                                 */
+/*********************************************************************************/
+
+
+hr {
+  &.short {
+    width: 6em;
+  }
+  &.hr-center {
+    margin: 2em auto;
+  }
+}
+
+.img-circle {
+      margin: 5px;
+      border-radius: 50%;
+}
+
+.text-light {
+  color: #999;
+}
+
+.text-shrink {
+  font-size: 80%;
+  line-height: initial;
+}
+
+.sweet-alert button {
+  height: inherit;
+  letter-spacing: inherit;
+  line-height: inherit;
+  color: white !important;
+}
+.icon-outline {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  line-height: 30px;
+
+  -moz-border-radius: 20px; /* or 50% */
+  border-radius: 20px; /* or 50% */
+
+  background-color: #fafafa;
+  @include card(0);
+  color: white;
+  text-align: center;
+  font-size: 2em;
+}
+
+/*********************************************************************************/
+/* Main Landing                                                                  */
+/*********************************************************************************/
+
+.card-wrapper-landing {
+  margin-bottom: 100px;
+}
+
+/*********************************************************************************/
+/* Lists                                                                         */
+/*********************************************************************************/
+.bg-lists {
+  background: #fafafa !important;
+}
+
+.card-wrapper-lists {
+  position: relative;
+  @include card(1);
+  background-color: #fff;
+  margin-bottom: 100px;
+  h3 {
+    //min-height: 3em;
+  }
+  .card-body {
+    padding: 20px 30px;
+  }
+  .card-body-text {
+    min-height: 12em;
+    p {
+      margin-bottom: 10px;
+    }
+    .fade {
+      position: relative;
+      height: 3.6em; /* exactly three lines */
+    }
+    .fade:after {
+      content: "";
+      text-align: right;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 70%;
+      height: 6em;
+      background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 50%);
+    }
+  }
+}
+
+.card-outcome {
+  color: _palette(fg-bold)
+}
+
+.img-card-lists {
+  min-height: 200px;
+}
+
+.img-cards-avatar {
+  width: 40px;
+  @include card(1);
+}
+
+.img-cards-avatar-cardback {
+  width: 60px;
+  @include card(1);
+
+}
+
+.card-actions {
+  margin-top: 2em;
+}
+
+.card-actions-back {
+  position: absolute;
+  bottom: 65px;
+  margin: auto;
+  left: 0;
+  right: 0;
+}
+
+.icon-flip-transform {
+  opacity: 0.4;
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  filter: FlipH;
+  -ms-filter: "FlipH";
+}
+
+.icon-flip-white {
+  width: 15px;
+}
+
+/*********************************************************************************/
+/* Card Flip (https://davidwalsh.name/css-flip)                                  */
+/*********************************************************************************/
+
+
+.flip-container {
+  -webkit-perspective: 1000;
+  -moz-perspective: 1000;
+  -o-perspective: 1000;
+  perspective: 1000;
+}
+
+.flip-container, .front, .back {
+  width: 100%;
+  height: 700px;
+}
+
+.flipper {
+  -moz-transform: perspective(1000px);
+  -moz-transform-style: preserve-3d;
+
+  position: relative;
+}
+
+.front, .back {
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+
+  -webkit-transition: 0.6s;
+  -webkit-transform-style: preserve-3d;
+
+  -moz-transition: 0.6s;
+  -moz-transform-style: preserve-3d;
+
+  -o-transition: 0.6s;
+  -o-transform-style: preserve-3d;
+
+  -ms-transition: 0.6s;
+  -ms-transform-style: preserve-3d;
+
+  transition: 0.6s;
+  transform-style: preserve-3d;
+
+
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.back {
+  -webkit-transform: rotateY(-180deg);
+  -moz-transform: rotateY(-180deg);
+  -o-transform: rotateY(-180deg);
+  -ms-transform: rotateY(-180deg);
+  transform: rotateY(-180deg);
+}
+
+.flip-container.flip .back, .flip-container.flip .back {
+  -webkit-transform: rotateY(0deg);
+  -moz-transform: rotateY(0deg);
+  -o-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
+  transform: rotateY(0deg);
+}
+
+.flip-container.flip .front, .flip-container.flip .front {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+
+
+.front {
+  z-index: 2;
+}
+
+/*********************************************************************************/
+/*                                                                   */
+/*********************************************************************************/
