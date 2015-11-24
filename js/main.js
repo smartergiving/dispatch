@@ -69,7 +69,6 @@ $(function() {
     });
     //Donate button
     $( '.js-donate' ).click(function(e) {
-    console.log('clicked');
     e.preventDefault();
     swal({
       title: 'Your generosity is infectious!',

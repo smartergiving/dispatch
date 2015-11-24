@@ -1,6 +1,7 @@
 # Site settings
-baseurl: "/dispatch"
-url: "https://smartergiving.org"
+
+baseurl: /dispatch
+url: https://smartergiving.org
 exclude:
 - README.md
 - CNAME
