@@ -61,21 +61,10 @@ $(function() {
     }, 'slow');
   });
   //Auto-fit description text
-    $('.js-card-description').each(function(){
-      var _self = $(this);
-      if (_self.outerHeight() > (19*5)){
-        _self.addClass('text-shrink');
-      }
-    });
-    //Donate button
-    $( '.js-donate' ).click(function(e) {
-    e.preventDefault();
-    swal({
-      title: 'Your generosity is infectious!',
-      text: 'Unfortunately, we have a few legal and tax issues to finalize before we can allow the world to donate so simply :)',
-      type: 'warning',
-      allowOutsideClick: true,
-      confirmButtonText: 'Close',
-    });
+  $('.js-card-description').each(function(){
+    var _self = $(this);
+    if (_self.outerHeight() > (19*5)){
+      _self.addClass('text-shrink');
+    }
   });
 });

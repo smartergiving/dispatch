@@ -1,0 +1,167 @@
+<div id="sgvg" class="donate-modal-wrapper">
+  <div class="modal fade in" id="sgvg-modal" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-front">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="opacity: 1; transition: none; -webkit-transition: none;"></button>
+            <div class="image">
+              <img src="//d2zrr75qo845hh.cloudfront.net/images/db/default/avatar.jpg" data-img-type="stripe-img">
+            </div>
+            <div class="modal-title">
+              <h1></h1>
+              <h2>Donation Options</h2>
+            </div>
+          </div>
+          <div class="modal-body">
+
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+              <div class="panel panel-default">
+                <div class="panel-heading collapsed" role="tab" id="headingOne" data-toggle="collapse" data-parent="#accordion" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  <div class="panel-title panel-title-dafs">
+                    Donor Advised Funds
+                  </div>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                    <div class="panel-body">
+                      <!-- If EIN, then show -->
+                      <div class="donate-dafs">
+                        <div class="row">
+                          <div class="col-xs-12">
+                            <div class="form-group">
+                              <div class="input-group">
+
+                              <!--span class="input-group-addon"><i class="fa fa-arrow-circle-right"></i></span-->
+                              <select id="dafSelection" class="form-control">
+                                <option value="" selected disabled>Select your provider</option>
+                                <option value="fidelity">Fidelity Charitable</option>
+                                <option value="schwab">Schwab Charitable</option>
+                                <option value="gkccf">Greater Kansas City Community Foundation</option>
+                              </select>
+                              <!--span class="input-group-addon"><i class="fa fa-caret-down"></i></span-->
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-xs-12">
+                            <div id="dafAmountCollapse" class="collapse">
+                              <form class="" data-parsley-validate>
+                                <div class="form-group" style="margin:30px 0">
+                                  <!--label class="control-label" for="dafAmount">Your Pledge</label-->
+                                  <div class="input-group">
+                                    <div class="input-group-addon">$</div>
+                                    <input class="form-control" id="dafAmount" placeholder="Enter Amount" value="{{donateAmount}}">
+                                    <div class="input-group-addon">.00</div>
+                                  </div>
+                                </div>
+                                <div id="dafAmountSubmitCollapse" class="align-center collapse">
+                                    <button type="submit" class="js-daf-submit">Continue <i class="fa fa-external-link-square"></i></button>
+                                </div>
+                              </form>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Else show -->
+                      <p class="donate-dafs-na">Sorry, option not available for this nonprofit</p>
+                    </div>
+                  </div>
+
+              </div>
+              <div class="panel panel-default" style="display:none">
+                <div class="panel-heading collapsed" role="tab" id="headingTwo" data-toggle="collapse" data-parent="#accordion" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  <div class="panel-title panel-title-stripe">
+                    Credit Card or Bitcoin
+                  </div>
+                </div>
+                <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                  <div class="panel-body">
+
+                    <p>Sorry, we can't ensure tax deductibility using this method</p>
+
+                  </div>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading collapsed" role="tab" id="headingThree" data-toggle="collapse" data-parent="#accordion" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  <div class="panel-title">
+                    Visit Website
+                  </div>
+                </div>
+                <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                  <div class="panel-body">
+                    <p class="panel-link"><i class="fa fa-external-link-square"></i>&nbsp;<a class="js-donate-direct" target="_blank"></a></p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="modal-footer">
+            <div class="footer-text">
+              <em>Powered by</em> <strong>SmarterGiving</strong><div class="faq-drawer">&nbsp;<i class="fa fa-info-circle" data-toggle="" data-title="Donate buttons for a modern web. Click to learn more."></i></div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-back-coinvest-faq">
+          <div class="modal-header">
+            <div class="image">
+              <img src="{{//d2zrr75qo845hh.cloudfront.net/images/db/default/stripe-default-blank.jpg}}" data-img-type="stripe-img">
+            </div>
+            <div class="modal-title">
+              <h1>CoINVEST</h1>
+              <h2>FAQ</h2>
+            </div>
+          </div>
+          <div class="modal-body">
+            <dl>
+              <dt>How can I ensure my donation is split equally among the 10 listed nonprofits?</dt>
+              <dd>Unfortunately, by law, the only way to accomplish that would be to donate to each nonprofit individually. For many overseas nonprofits, that typically requires an expensive international wire.</dd>
+              <dt>I noticed Spark itself is one of the 10 listed nonprofits.</dt>
+              <dd>Indeed! Finding, vetting, and funding the most effective grassroots organizations is important work.</dd>
+              <dt>I still have questions</dt>
+              <dd>The fine folks at Spark would love to hear from you: <a href="mailto:programs@sparksf.org" target="_blank">programs@sparksf.org</a></dd>
+            </dl>
+          </div>
+          <div class="modal-footer">
+            <div class="panel-heading text-muted">
+              <div class="coinvest-faq">Return <i class="fa fa-arrow-circle-down"></i></div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-back-faq top-buffer small stripe-text-light" style="display:none">
+
+          <p class="coinvest-faq coinvest-faq-close top-buffer text-center stripe-text-light"><span>Close FAQs</span></p>
+        </div>
+        <div class="modal-back">
+          <div class="modal-header">
+            <div class="image">
+              <!--img src="//d2zrr75qo845hh.cloudfront.net/images/db/default/stripe-default-blank.jpg" data-img-type="stripe-img"-->
+              <img src="{{ site.baseurl }}/images/icon-smartergiving.png">
+            </div>
+            <div class="modal-title">
+              <h1>SmarterGiving</h1>
+              <h2>Donate Buttons for a Modern Web</h2>
+            </div>
+          </div>
+          <div class="modal-body">
+            <dl>
+              <dt>What is SmarterGiving?</dt>
+              <dd>SmarterGiving is a service used by a growing number of grantmakers and philanthropic sites to facilitate donations to nonprofits without having to deal with the tax and compliance complexity of doing so.</dd>
+              <dt>What does it cost?</dt>
+              <dd>Nothing. SmarterGiving is run by a group of nerds who got tired of seeing nonprofits get nickel and dimed by payment providers.</dd>
+              <dt>How is that possible?</dt>
+              <dd>It's a volunteer-run initiative with minimal overhead. <a href="http://smartergiving.org" target="_blank">Learn more <i class="fa fa-external-link-square"></i>.</a></dd>
+            </dl>
+          </div>
+          <div class="modal-footer">
+            <div class="panel-heading text-center text-muted small text-center">
+              <div class="faq-drawer">Return <i class="fa fa-arrow-circle-down"></i></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

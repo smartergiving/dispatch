@@ -5,7 +5,7 @@
       <div class="flipper">
         <div class="front">
           <!--span class="image fit"><img src="//d2zrr75qo845hh.cloudfront.net/images/db/{{ org.key }}/bg.jpg" alt="" /></span-->
-          <div class="image fit img-card-lists" style="background:url('https://s3.amazonaws.com/kyn-production/images/db/{{ org.key }}/bg.jpg'), url('//d2zrr75qo845hh.cloudfront.net/images/db/default/bg.jpg') center no-repeat; background-size:cover;"></div>
+          <div class="image fit img-card-lists" style="background:url('//d2zrr75qo845hh.cloudfront.net/images/db/{{ org.key }}/bg.jpg'), url('//d2zrr75qo845hh.cloudfront.net/images/db/default/bg.jpg') center no-repeat; background-size:cover;"></div>
           <div class="card-body">
             <h3>{{ org.name }}</h3>
                   <div class="card-body-text">
@@ -23,7 +23,10 @@
                     {% endif %}
                   </div>
             <ul class="actions card-actions">
-              <li><a class="js-donate button special">Donate</a></li>
+              {% assign hash = org.links | where:"name","Website" %}
+                {% for each in hash %}
+                  <li><a class="js-donate button special" data-toggle="modal" data-target="#sgvg-modal" data-ein="{{ org.donation_info.us_ein }}" data-id="{{ org.key }}" data-donate-link="{{ each.link }}" data-donate-name="{{ org.name }}" data-loading-text="&lt;i class='fa fa-spinner fa-spin'&gt;&lt;/i&gt;" data-complete-text="Thank You!">Donate</a></li>
+                {% endfor %}
               <li><div class="js-flip button">More</li>
               <!--li><div class="js-flip button">More <img class="icon-flip icon-flip-transform" src="/images/icon-flip-small.png" alt=""></li-->
             </ul>

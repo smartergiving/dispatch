@@ -2,7 +2,6 @@
 # Do not remove
 ---
 @import "theme";
-@import "sweetalert";
 
 /*********************************************************************************/
 /* Custom Mixins and Functions                                                   */
@@ -92,6 +91,10 @@ hr {
   color: white;
   text-align: center;
   font-size: 2em;
+}
+
+a.button:hover {
+  text-decoration: none !important;
 }
 
 /*********************************************************************************/
