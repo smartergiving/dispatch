@@ -145,6 +145,15 @@ a.button:hover {
   }
 }
 
+.card-well {
+  position: relative;
+  display: block;
+  background-color: #fafafa;
+  padding: 25px;
+  font-size: .9em;
+  line-height: 1.5em;
+}
+
 .card-outcome {
   color: _palette(fg-bold)
 }
@@ -263,7 +272,6 @@ a.button:hover {
   -o-transform: rotateY(180deg);
   transform: rotateY(180deg);
 }
-
 
 .front {
   z-index: 2;
