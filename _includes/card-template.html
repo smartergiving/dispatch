@@ -34,7 +34,9 @@
             <header class="">
               <h3>{{ org.name }}</h3>
             </header>
+            {% if org.insights %}
             <p class="align-left js-card-description">{{ org.description }}</p>
+            {% endif %}
             {% if org.target_outcome %}
               <h6 class="text-light">THE GOAL OF YOUR INVESTMENT:</h6>
               <p class="card-well align-left">{{ org.target_outcome }}</p>
