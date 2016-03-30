@@ -14,6 +14,8 @@
       $('.donate-dafs').css('display', 'block');
       $('.donate-dafs-na').css('display', 'none');
       $('.modal-back').css('display', 'none');
+      $('#dafSelection').prop('selectedIndex', 0);
+      $('#dafAmount').val("");
       // --- Remove sessionStorage objects
       Object.keys(sessionStorage)
       .forEach(function(key){
@@ -120,6 +122,10 @@
         if (daf == 'schwab') {
           $('#sgvg-modal').modal('hide');
           window.open('https://client.schwab.com/Login/SignOn/CustomerCenterLogin.aspx?SANC=recommendgrant&PARMS=|Npo_Id=' + ein +'|Grnt_Amnt='+ amt + '|Device_Type=Widget|App_Id=MDNR|source=widget|Grnt_Dsg_Txt=' + txt);
+        }
+        if (daf == 'bny') {
+          $('#sgvg-modal').modal('hide');
+          window.open('https://bnym.iphiview.com/bnym/API/Grants.mvc.axd/DafDirect?Npo_Id=' + ein + '&Grnt_Amnt='+ amt + '&Grnt_Dsg_Txt=' + txt);
         }
         // TODO - need to provide 'success' feedback
       });
