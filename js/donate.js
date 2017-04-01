@@ -64,7 +64,7 @@
 
       var modal = $(this).find('.modal-front');
       modal.find('.modal-title h1').text(name);
-      modal.find('.image img').attr('src','//d2zrr75qo845hh.cloudfront.net/images/db/' + id + '/avatar.jpg');
+      modal.find('.image img').attr('src','/dispatch/images/db/' + id + '/avatar.jpg');
       //TODO: Handle missing images
 
       // --- DAFs ---

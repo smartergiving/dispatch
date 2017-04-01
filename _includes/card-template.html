@@ -3,7 +3,7 @@
     <div class="flip-container">
       <div class="flipper">
         <div class="front">
-          <div class="image fit img-card-lists" style="background:url('//d2zrr75qo845hh.cloudfront.net/images/db/{{ org.key }}/bg.jpg'), url('//d2zrr75qo845hh.cloudfront.net/images/db/default/bg.jpg') center no-repeat; background-size:cover;">
+          <div class="image fit img-card-lists" style="background:url('{{ site.baseurl }}/images/db/{{ org.key }}/bg.jpg'), url('{{ site.baseurl }}/images/db/default/bg.jpg') center no-repeat; background-size:cover;">
           </div>
           <div class="card-body">
             <h3>{{ org.name }}</h3>
@@ -30,7 +30,7 @@
         </div>
         <div class="back">
           <div class="card-body">
-            <img src="//d2zrr75qo845hh.cloudfront.net/images/db/{{ org.key }}/avatar.jpg" data-img-type="avatar" class="img-circle img-cards-avatar-cardback">
+            <img src="{{ site.baseurl }}/images/db/{{ org.key }}/avatar.jpg" data-img-type="avatar" class="img-circle img-cards-avatar-cardback">
             <header class="">
               <h3>{{ org.name }}</h3>
             </header>
